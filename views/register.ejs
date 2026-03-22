@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("partials/head", { title: "Register" }) %>
+  </head>
+  <body class="min-h-screen bg-slate-100">
+    <%- include("partials/nav") %>
+    <%- include("partials/alerts") %>
+
+    <main class="flex min-h-[calc(100vh-80px)] items-center justify-center px-4 py-10">
+      <div class="w-full max-w-5xl overflow-hidden rounded-3xl bg-white shadow-2xl shadow-slate-200/70">
+        <div class="grid min-h-[640px] lg:grid-cols-2">
+          
+          <div class="hidden lg:flex flex-col justify-between bg-gradient-to-br from-indigo-600 via-blue-600 to-slate-800 p-10 text-white">
+            <div>
+              <p class="text-sm font-medium uppercase tracking-[0.2em] text-blue-100">
+                Notes Management
+              </p>
+              <h1 class="mt-4 text-4xl font-bold leading-tight">
+                Create your account and get started
+              </h1>
+              <p class="mt-4 max-w-md text-sm leading-6 text-blue-100">
+                Join your personal notes workspace to organize ideas, save tasks, and manage everything in one secure place.
+              </p>
+            </div>
+
+            <div class="space-y-4">
+              <div class="rounded-2xl bg-white/10 p-4 backdrop-blur-sm">
+                <p class="text-sm font-semibold">Easy Access</p>
+                <p class="mt-1 text-sm text-blue-100">
+                  Sign up once and access your notes anytime.
+                </p>
+              </div>
+
+              <div class="rounded-2xl bg-white/10 p-4 backdrop-blur-sm">
+                <p class="text-sm font-semibold">Organized Workflow</p>
+                <p class="mt-1 text-sm text-blue-100">
+                  Keep your thoughts, reminders, and notes neatly managed.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-center p-6 sm:p-10 lg:p-12">
+            <div class="w-full max-w-md">
+              <div class="mb-8">
+                <h2 class="text-3xl font-bold tracking-tight text-slate-800">Register</h2>
+                <p class="mt-2 text-sm text-slate-500">
+                  Create your account to start managing your notes.
+                </p>
+              </div>
+
+              <form action="/register" method="POST" class="space-y-5">
+                <div>
+                  <label class="mb-2 block text-sm font-semibold text-slate-700" for="name">
+                    Full Name
+                  </label>
+                  <input
+                    id="name"
+                    type="text"
+                    name="name"
+                    required
+                    minlength="2"
+                    maxlength="80"
+                    placeholder="Enter your full name"
+                    class="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-slate-800 placeholder:text-slate-400 outline-none transition focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-100"
+                  />
+                </div>
+
+                <div>
+                  <label class="mb-2 block text-sm font-semibold text-slate-700" for="email">
+                    Email Address
+                  </label>
+                  <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    required
+                    placeholder="you@example.com"
+                    class="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-slate-800 placeholder:text-slate-400 outline-none transition focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-100"
+                  />
+                </div>
+
+                <div>
+                  <label class="mb-2 block text-sm font-semibold text-slate-700" for="password">
+                    Password
+                  </label>
+                  <input
+                    id="password"
+                    type="password"
+                    name="password"
+                    required
+                    minlength="8"
+                    maxlength="64"
+                    placeholder="At least 8 characters"
+                    class="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-slate-800 placeholder:text-slate-400 outline-none transition focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-100"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  class="inline-flex w-full items-center justify-center rounded-2xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-200 transition hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-100"
+                >
+                  Create Account
+                </button>
+              </form>
+
+              <p class="mt-6 text-center text-sm text-slate-600">
+                Already have an account?
+                <a href="/login" class="font-semibold text-blue-600 transition hover:text-blue-700 hover:underline">
+                  Login
+                </a>
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

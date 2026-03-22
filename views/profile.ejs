@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen bg-slate-100">
+    <%- include("partials/nav") %>
+    <%- include("partials/alerts") %>
+
+    <main class="px-4 py-8 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-5xl">
+        <div class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl shadow-slate-200/60">
+          
+          <div class="bg-gradient-to-r from-blue-600 via-indigo-600 to-slate-800 px-8 py-10 text-white">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-sm font-medium uppercase tracking-[0.2em] text-blue-100">
+                  Account Overview
+                </p>
+                <h1 class="mt-2 text-3xl font-bold tracking-tight">Profile</h1>
+                <p class="mt-2 text-sm text-blue-100">
+                  Manage your personal account information securely.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-8">
+            <div class="grid gap-6 md:grid-cols-2">
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+                <p class="text-sm font-medium text-slate-500">Full Name</p>
+                <p class="mt-2 text-lg font-semibold text-slate-800"><%= user.name %></p>
+              </div>
+
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+                <p class="text-sm font-medium text-slate-500">Email Address</p>
+                <p class="mt-2 text-lg font-semibold text-slate-800"><%= user.email %></p>
+              </div>
+            </div>
+
+            <div class="mt-8 rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-5">
+              <p class="text-sm leading-6 text-slate-600">
+                Keep your profile information updated for a better and more secure experience.
+              </p>
+            </div>
+
+            <div class="mt-8">
+              <a
+                href="/profile/change-password"
+                class="inline-flex items-center justify-center rounded-2xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-md shadow-blue-200 transition hover:bg-blue-700"
+              >
+                Change Password
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

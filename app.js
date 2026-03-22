@@ -53,6 +53,11 @@ app.use((req, res, next) => {
   next();
 });
 
+// Root route for Render
+app.get("/", (req, res) => {
+  res.redirect("/login");
+});
+
 // Routes
 app.use("/", authRoutes);
 app.use("/notes", notesRoutes);
@@ -66,12 +71,12 @@ app.use((req, res) => {
 // Error handler
 app.use(errorMiddleware);
 
-const port = Number(process.env.PORT || 3000);
+const PORT = process.env.PORT || 3000;
 
 connectDB()
   .then(() => {
-    app.listen(port, () => {
-      console.log(`Server running on port ${port}`);
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
     });
   })
   .catch((err) => {
